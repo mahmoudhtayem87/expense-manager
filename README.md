@@ -1,4 +1,4 @@
-# expense-manager
+# Expense Manager
 Expense Manager has been created to demonstrate the ease of building a whole new business application using Liferay, once you start working with service builder you will notice the following.
 
 Liferay provide a standard approach to facilitate the following platform services:
