@@ -1,0 +1,16 @@
+dependencies {
+	compile project(":modules:expense-manager:expense-manager-api")
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+    compileOnly 'com.liferay.portal:release.dxp.api'
+	compileOnly group: "com.liferay", name: "com.liferay.petra.function"
+	compileOnly group: "com.liferay", name: "com.liferay.petra.model.adapter"
+	compileOnly group: "com.liferay", name: "com.liferay.petra.reflect"
+	compileOnly group: "com.liferay", name: "com.liferay.portal.search.spi"
+	compileOnly group: "com.liferay", name: "com.liferay.portal.search.api"
+}
+
+buildService {
+	apiDir = "../expense-manager-api/src/main/java"
+}
+
+group = "com.liferay.me.expense.manager"

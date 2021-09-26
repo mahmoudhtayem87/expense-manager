@@ -1,0 +1,5 @@
+Bundle-Name: ng-expense-configuration
+Bundle-SymbolicName: com.liferay.me.expense.manager.web.configurations.views
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.me.expense.manager.web.configurations.views.constants
+Web-ContextPath: /ng-expense-configuration

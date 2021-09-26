@@ -1,0 +1,6 @@
+Bundle-Name: expense-manager-service
+Bundle-SymbolicName: com.liferay.me.expense.manager.service
+Bundle-Version: 1.0.0
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true
+-dsannotations-options: inherit

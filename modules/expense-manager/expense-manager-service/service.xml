@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.3.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_3_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.liferay.me.expense.manager">
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<author>Mahmoud Hussein Tayem</author>
+	<namespace>ExpenseManager</namespace>
+	<entity name="ExpenseItemType" local-service="true">
+		<!-- PK fields -->
+
+		<column name="expenseItemTypeId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<column name="title" type="String"></column>
+		<column name="value" type="String"></column>
+
+		<column name="status" type="int"></column>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="ExpenseItemTypeId" return-type="ExpenseItemType" unique="true">
+			<finder-column name="expenseItemTypeId"></finder-column>
+		</finder>
+
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+
+		<finder name="G_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+
+		<reference entity="Group" package-path="com.liferay.portal"></reference>
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset"></reference>
+	</entity>
+	<entity name="Translation" local-service="true">
+		<!-- PK fields -->
+
+		<column name="translationId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<column name="portletId" type="String"></column>
+		<column name="componentId" type="String"></column>
+		<column name="key" type="String"></column>
+		<column name="cultureCode" type="String"></column>
+		<column name="translationValue" type="String"></column>
+
+		<finder name="TranslationId"  return-type="Translation" unique="true">
+			<finder-column name="translationId"></finder-column>
+		</finder>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="PortletIdAndCultureCode" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="portletId"></finder-column>
+			<finder-column name="cultureCode"></finder-column>
+		</finder>
+		<finder name="GroupIdAndPortletId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="portletId"></finder-column>
+		</finder>
+		<finder name="PortletIdComponentIdCultureCode" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="portletId"></finder-column>
+			<finder-column name="componentId"></finder-column>
+			<finder-column name="cultureCode"></finder-column>
+		</finder>
+
+		<reference entity="Group" package-path="com.liferay.portal"></reference>
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset"></reference>
+	</entity>
+	<entity name="Expense" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="expenseId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="title" type="String"></column>
+		<column name="description" type="String"></column>
+		<column name="currency" type="String"></column>
+		<column name="expenseDate" type="Date"></column>
+		<column name="amount" type="long"></column>
+
+		<column name="statusByUserId" type="long" ></column>
+		<column name="statusByUserName" type="String" ></column>
+		<column name="statusDate" type="Date" ></column>
+		<column name="status" type="int"></column>
+
+		<order by="asc">
+			<order-column name="expenseDate"></order-column>
+		</order>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="UserName" return-type="Collection">
+			<finder-column name="userName"></finder-column>
+		</finder>
+		<finder name="UserID" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+		</finder>
+		<finder name="ExpenseId" return-type="Expense" unique="true">
+			<finder-column name="expenseId"></finder-column>
+		</finder>
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+
+		<finder name="G_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+
+
+
+		<reference entity="Group" package-path="com.liferay.portal"></reference>
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset"></reference>
+	</entity>
+	<entity name="ExpenseItem" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="expenseItemId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="dateIncurred" type="Date"></column>
+		<column name="title" type="String"></column>
+		<column name="description" type="String"></column>
+		<column name="type" type="long"></column>
+		<column name="reimburse" type="boolean"></column>
+		<column name="amount" type="Long"></column>
+		<column name="expenseId" type="long"></column>
+
+		<column name="statusByUserId" type="long" ></column>
+		<column name="statusByUserName" type="String" ></column>
+		<column name="statusDate" type="Date" ></column>
+		<column name="status" type="int"></column>
+
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="ExpenseId" return-type="Collection">
+			<finder-column name="expenseId"></finder-column>
+		</finder>
+		<finder name="ExpenseItemId" return-type="Collection">
+			<finder-column name="expenseItemId"></finder-column>
+		</finder>
+
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+
+		<finder name="G_S" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="status" />
+		</finder>
+
+		<reference entity="Group" package-path="com.liferay.portal"></reference>
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetLink" package-path="com.liferay.portlet.asset"></reference>
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset"></reference>
+	</entity>
+	<exceptions>
+		<exception>ExpenseValidationExcepion</exception>
+	</exceptions>
+</service-builder>

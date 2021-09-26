@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.me.expense.manager.model.Expense">
+		<field name="expenseId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="title" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="currency" type="String" />
+		<field name="expenseDate" type="Date" />
+		<field name="amount" type="long" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.liferay.me.expense.manager.model.ExpenseItem">
+		<field name="expenseItemId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dateIncurred" type="Date" />
+		<field name="title" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="type" type="long" />
+		<field name="reimburse" type="boolean" />
+		<field name="amount" type="Long" />
+		<field name="expenseId" type="long" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.liferay.me.expense.manager.model.ExpenseItemType">
+		<field name="expenseItemTypeId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="title" type="String" />
+		<field name="value" type="String" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.liferay.me.expense.manager.model.Translation">
+		<field name="translationId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="portletId" type="String" />
+		<field name="componentId" type="String" />
+		<field name="key" type="String" />
+		<field name="cultureCode" type="String" />
+		<field name="translationValue" type="String" />
+	</model>
+</model-hints>

@@ -1,0 +1,5 @@
+Bundle-Name: ng-expense-user-views
+Bundle-SymbolicName: com.liferay.me.expense.manager.web.users.view
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.me.expense.manager.web.users.view.constants
+Web-ContextPath: /ng-expense-user-views

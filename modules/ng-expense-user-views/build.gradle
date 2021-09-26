@@ -1,0 +1,6 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+	compileOnly project(":modules:expense-manager:expense-manager-api")
+	compileOnly group: "com.liferay", name: "com.liferay.asset.api"
+	compileOnly group: "com.liferay", name: "com.liferay.asset.display.page.api"
+}

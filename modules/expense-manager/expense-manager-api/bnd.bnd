@@ -1,0 +1,11 @@
+Bundle-Name: expense-manager-api
+Bundle-SymbolicName: com.liferay.me.expense.manager.api
+Bundle-Version: 1.0.0
+Export-Package:\
+    com.liferay.me.expense.manager.constants,\
+	com.liferay.me.expense.manager.exception,\
+	com.liferay.me.expense.manager.model,\
+	com.liferay.me.expense.manager.service,\
+	com.liferay.me.expense.manager.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../expense-manager-service/service.xml
