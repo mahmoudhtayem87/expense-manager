@@ -15,3 +15,5 @@ Liferay will allow your developer to use the preferred language / development fr
 Once you finish building your UI a powerful provided gradle service will convert your UI into Liferay Native Widget, which you will be able to use it as part of the page builder toolbox, so you can easily drag and drop the widget in any page, this will empower you to implement micro front end easily. 
 
 Build your own configuration portlet with a simple step which will allow you to control your whole application from one window; in my example, I have implemented DB translation module and integrated it with my application view, you will be able to configure the translations for any language from the configuration portlet, moreover I have added some lookup configuration, so it becomes handy to manage the Expense Item Types.
+
+![caption](https://github.com/mahmoudhtayem87/expense-manager/releases/download/Version1/with.config.panel.gif)
